@@ -1,0 +1,45 @@
+//Variables
+$bg-green: #A1BBA2;
+
+
+
+
+#header {
+	background-color: $bg-green;
+	height: 50px;
+	width: 100%;
+	min-with: 980px;
+	position:fixed;
+	z-index:1;
+	top:0px;
+
+	a {
+	color:black;
+  	&:visited {
+  	color: black;
+  	}
+  	&:hover {
+  	color:black;
+    text-decoration: none;
+    
+  	}
+}
+
+	li {
+	display: inline;
+	float: left;
+	margin-right: 20px;
+	margin-top: 0px;
+	}
+}
+.nav_search {
+	margin-top:10px;
+	height: 30px;
+	width: 284px;
+}
+.logo-text {
+	font-size: 35px;
+	font-family: arial, helvetica, sans-serif;
+	line-height:50px;
+}
+
