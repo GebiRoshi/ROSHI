@@ -84,6 +84,6 @@ class KlassesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def klass_params
-      params.require(:klass).permit(:title, :teacher, :description, :date, :time, :place, :price, :address, :latitude, :longitude)
+      params.require(:klass).permit(:title, :teacher_id, :description, :date, :time, :place, :price, :address, :latitude, :longitude)
     end
 end
