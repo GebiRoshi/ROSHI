@@ -2,6 +2,15 @@
 
 
 <div class="col-md-4" id="leftside">
+<h1>About your teacher</h1>
+</br>
+
+<p>
+  <strong>Name:</strong>
+  <%= link_to @klass.teacher.name, teacher_path %>
+</p>
+
+  <%= image_tag(@klass.teacher.picture) %>
 
 </div>
 <div class="col-md-6" id="middle">
@@ -10,10 +19,7 @@
 <h1>  <%= @klass.title %></h1>
 
 
-<p>
-  <strong>Teacher:</strong>
-  <%= @klass.teacher %>
-</p>
+
 
 <p>
   <strong>Description:</strong>

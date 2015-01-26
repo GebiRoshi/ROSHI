@@ -5,6 +5,8 @@ class KlassesController < ApplicationController
   # GET /klasses.json
   def index
     @klasses = Klass.all
+    @klass = Klass.find(1)
+
     @hash = Gmaps4rails.build_markers(@klasses) do |klass, marker|
       marker.lat klass.latitude
       marker.lng klass.longitude
@@ -22,6 +24,7 @@ class KlassesController < ApplicationController
   # GET /klasses/1
   # GET /klasses/1.json
   def show
+
   end
 
   # GET /klasses/new

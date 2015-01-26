@@ -51,7 +51,7 @@
     <% @klasses.each do |klass| %>
       <tr>
         <td><%= klass.title %></td>
-        <td><%= klass.teacher %></td>
+        <td><%= @klass.teacher.name %></td>
         <td><%= klass.description %></td>
         <td><%= klass.date %></td>
         <td><%= klass.time %></td>

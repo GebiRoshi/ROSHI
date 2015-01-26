@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+ resources :teachers
   resources :klasses
-
   root to: 'klasses#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
