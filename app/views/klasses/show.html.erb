@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 
@@ -5,6 +6,7 @@
 <h1>About your teacher</h1>
 </br>
 
+<div id="teacher-box">
 <p>
   <strong>Name:</strong>
   <%= link_to @klass.teacher.name, teacher_path %>
@@ -12,6 +14,7 @@
 
   <%= image_tag(@klass.teacher.picture) %>
 
+</div>
 </div>
 <div class="col-md-6" id="middle">
 

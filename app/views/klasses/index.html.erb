@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<div class="col-md-4" id="leftside">
+<div class="col-md-4 leftside">
 
   <%= render "maps/leftside_map" %>
 
 </div>
-<div class="col-md-6" id="middle">
+<div class="col-md-6 middle">
 
   <div id="class_post">
     <h1>Listing Klasses</h1>
@@ -16,15 +16,17 @@
                   <%= klass.title %>
               </div>
                  <div class="dealpad">
+                  <div class="row">
                     <div class="col-md-6">
                       <%= klass.place %><br>
                       <%= klass.date %>
                     </div>  
                      <div class="col-md-6">
 
-                      <%= button_to "From: #{klass.price}₪", klass, :method => "get" %>
+                     <%= button_to "From: #{klass.price}₪", klass, :method => "get", class: 'button' %>
               Session
                   </div>
+                </div>
               </div>
           </div>
       </li>
@@ -32,7 +34,7 @@
 
   </div>
 
-
+<!-- Rails Table -->
 <table>
   <thead>
     <tr>
@@ -48,6 +50,7 @@
   </thead>
 
   <tbody>
+
     <% @klasses.each do |klass| %>
       <tr>
         <td><%= klass.title %></td>
@@ -70,5 +73,6 @@
 <%= link_to 'New Klass', new_klass_path %>
 
 </div>
-<div class="col-md-2">
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 rightside" id="rightside">
+
 </div>

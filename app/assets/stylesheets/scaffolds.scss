@@ -6,7 +6,7 @@ body {
   line-height: 18px;
   padding:0px;
   margin: 0px;
-  min-width:970px;
+  width:100%;
 }
 
 h1 {
@@ -24,17 +24,6 @@ pre {
   font-size: 11px;
 }
 
-a {
-
-  &:visited {
-
-  }
-  &:hover {
-
-    text-decoration: none;
-    color: green;
-  }
-}
 
 div {
   &.field, &.actions {

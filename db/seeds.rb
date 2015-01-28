@@ -8,6 +8,7 @@
 
 Klass.destroy_all
 Teacher.destroy_all
+User.destroy_all
 
 Klass.create!([{
     	title: "title",
@@ -50,8 +51,7 @@ Klass.create!([{
 Teacher.create!([{
       name: "Gebi",
       last_name: "Roschanek",
-      email: "gebi.roshi@gmail.com", 
-      password: "Online",
+
       picture: "https://s3-eu-west-1.amazonaws.com/roshi.app/Test_pictures/Gabriel_User.png",
       mobile: "0548386486",
       birthdate: "08.09.1984",
@@ -60,8 +60,7 @@ Teacher.create!([{
       {
       name: "Shany",
       last_name: "Shaked",
-      email: "schanyshaked@gmail.com", 
-      password: "Shany",
+
       picture: "https://s3-eu-west-1.amazonaws.com/roshi.app/Test_pictures/Shany_user.jpeg",
       mobile: "054123456",
       birthdate: "27.06.1986",

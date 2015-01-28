@@ -14,33 +14,63 @@
     <!-- Jqueryscript included?? -->
 </head>
 <body>
-	<div id='header'>
-		<ul>
-			<li>
-			<%= link_to "#{image_tag('https://s3-eu-west-1.amazonaws.com/roshi.app/Global_Pictures/Roshi_Logo_Navbar.png')}".html_safe, klasses_path %>
-			</li>
-			<li>
-				<span class="logo-text"><%= link_to "ROSHI", klasses_path%></span>
-			</li>
-			<li>
-				<form>
-					<input class='nav_search' type="text" name="location" placeholder="Where are you?">
-				</form>
-			</li>
-		</ul>
 
+<div class="container-fluid">
+	<div class="row">
+		<div class="nav">
+		<div class="col-md-6">
+			<div class="logo_nav">
+			<ul>
+				<li>
+				<%= link_to "#{image_tag('https://s3-eu-west-1.amazonaws.com/roshi.app/Global_Pictures/Roshi_Logo_Navbar.png')}".html_safe, klasses_path %>
+				</li>
+				<li>
+					<%= link_to "ROSHI", klasses_path, class: 'logo-text'%>
+				</li>
+				<li>
+					<form>
+						<input class='nav_search' type="text" name="location" placeholder="Where are you?">
+					</form>
+				</li>
+			</ul>
+			</div>
+		</div>	
+			<!-- Heres the new log-in -->
+			<div class="col-md-6">
+				<div class="user_nav">
+					<ul>
+				<% if current_user %>
+					<li>Logged in as "<%= current_user.email %>"</li>
+					<li><%= link_to "Log Out", logout_path %></li>
+					<li><%= link_to 'Create a new Class', new_klass_path, class: 'button' %></li>
+				<% else %>
+					<li><%= link_to "Sign Up", signup_path %></li>
+					<li><%= link_to "Log In", login_path %></li>
+					<li><%= link_to 'Create a new Class', new_klass_path, class: 'button' %></li>
+					<% end %>
+					</ul>
+				</div>
+	
+			
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="content">
+
+		<%= yield %>
+		</div>
 
 	</div>
 
-
-<div id="container">
-
-	<%= yield %>
-
+		<div class='row'>
+			<div id="footer">
+<div class="col-md-6"> hello 6 yes</div>
+<div class="col-md-6"> Im the 2nd one</div>
+			</div>
+		</div>
 </div>
 
-<div id="footer">
-</div>
 
 </body>
 </html>
