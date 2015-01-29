@@ -1,0 +1,42 @@
+<div class="col-md-6">
+	<div class="logo_nav">
+	<ul>
+		<li>
+		<%= link_to "#{image_tag('https://s3-eu-west-1.amazonaws.com/roshi.app/Global_Pictures/Roshi_Logo_Navbar.png')}".html_safe, klasses_path %>
+		</li>
+		<li>
+			<%= link_to "ROSHI", klasses_path, class: 'logo-text'%>
+		</li>
+		<li>
+			<form>
+				<input class='nav_search' type="text" name="location" placeholder="Where are you?">
+			</form>
+		</li>
+	</ul>
+	</div>
+</div>	
+<!-- Heres the new log-in -->
+<div class="col-md-6">
+	<div class="user_nav">
+		<ul>
+	<% if current_user %>
+		<li>
+			<%= dropdown current_user.name do %>
+			  <%= link_to 'Dashboard', root_path %>
+			  <%= link_to 'My Classes', my_classes_path %>
+			  <%= link_to 'Account', edit_account_path %>
+			  <%= link_to 'Log Out', logout_path %>
+			<% end %>
+		</li>
+		<li><%= link_to 'Create a new Class', new_klass_path, class: 'button' %></li>
+
+
+
+	<% else %>
+		<li><%= link_to "Sign Up", signup_path %></li>
+		<li><%= link_to "Log In", login_path %></li>
+		<li><%= link_to 'Create a new Class', new_klass_path, class: 'button' %></li>
+		<% end %>
+		</ul>
+</div>
+

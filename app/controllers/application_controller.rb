@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
 
   private
   def not_authenticated
-  	redirect_to login_url, :alert => "Log in to create a class"
+  	redirect_to signup_url, :notice => "Sign up to create a class"
   end
 end

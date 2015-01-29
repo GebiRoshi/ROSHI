@@ -1,0 +1,13 @@
+<%= navbar do %>
+  <%= vertical do %>
+   
+
+   			<%= link_to 'Home', root_path %>
+
+        <%= nav class: 'navbar-right' do %>
+      		<%= link_to 'Profile', root_path %>
+      		<%= link_to 'Settings', users_path %>
+  		<% end %>
+
+  <% end %>
+<% end %>

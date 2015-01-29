@@ -1,6 +1,6 @@
 class KlassesController < ApplicationController
   before_action :set_klass, only: [:show, :edit, :update, :destroy]
-  before_filter :require_login, :only => :new
+  before_filter :require_login, :only => :create
   # GET /klasses
   # GET /klasses.json
   def index

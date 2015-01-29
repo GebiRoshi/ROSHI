@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
   get "my_classes" => "users#index", :as => "my_classes"
+  get "edit_account" => "users#edit", :as => "edit_account"
   resources :users
   resources :sessions
 
-  resources :teachers
   resources :klasses
   root to: 'klasses#index'
 

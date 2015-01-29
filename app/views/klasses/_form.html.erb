@@ -19,7 +19,14 @@
 
   <div class="field">
 
+<% if current_user %>
 <%= f.hidden_field :user_id, :value => current_user.id%>
+<% else %>
+<%= f.hidden_field :user_id, :value => User.count+1 %>
+<% end %>
+
+
+
 
 </div>
 
