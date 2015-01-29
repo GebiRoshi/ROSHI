@@ -11,9 +11,14 @@ class UsersController < ApplicationController
 	    render :new
 	  end
 	end
+
+	def index
+		@my_klasses = Klass.where(user_id:current_user.id)
+	end
+
 	private
 
 	  def user_params
-      params.require(:user).permit( :email, :password, :password_confirmation)
+      params.require(:user).permit( :email, :password, :password_confirmation, :name, :last_name, :picture, :mobile, :birthdate)
       end
 end

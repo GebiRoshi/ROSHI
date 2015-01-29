@@ -7,8 +7,10 @@
 </div>
 <div class="col-md-6 middle">
 
+<h3>Show My Classes:</h3> <%= link_to "click here", my_classes_path %>
+
   <div id="class_post">
-    <h1>Listing Klasses</h1>
+    <h1>Listing Classes</h1>
     <% @klasses.each do |klass| %>
       <li>
           <div class="dealbox">
@@ -54,7 +56,7 @@
     <% @klasses.each do |klass| %>
       <tr>
         <td><%= klass.title %></td>
-        <td><%= @klass.teacher.name %></td>
+        <td><%= klass.user.name %></td>
         <td><%= klass.description %></td>
         <td><%= klass.date %></td>
         <td><%= klass.time %></td>

@@ -1,7 +1,7 @@
 class CreateKlasses < ActiveRecord::Migration
   def change
     create_table :klasses do |t|
-      t.belongs_to :teacher, index: true
+      t.belongs_to :user, index: true
       t.string :title
       t.text :description
       t.datetime :date

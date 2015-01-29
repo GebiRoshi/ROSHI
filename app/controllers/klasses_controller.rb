@@ -5,7 +5,7 @@ class KlassesController < ApplicationController
   # GET /klasses.json
   def index
     @klasses = Klass.all
-    @klass = Klass.find(1)
+
 
     @hash = Gmaps4rails.build_markers(@klasses) do |klass, marker|
       marker.lat klass.latitude
@@ -84,6 +84,6 @@ class KlassesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def klass_params
-      params.require(:klass).permit(:title, :teacher_id, :description, :date, :time, :place, :price, :address, :latitude, :longitude)
+      params.require(:klass).permit(:title, :user_id, :description, :date, :time, :place, :price, :address, :latitude, :longitude)
     end
 end

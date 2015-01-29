@@ -9,10 +9,10 @@
 <div id="teacher-box">
 <p>
   <strong>Name:</strong>
-  <%= link_to @klass.teacher.name, teacher_path %>
+  <%= link_to @klass.user.name, user_path %>
 </p>
 
-  <%= image_tag(@klass.teacher.picture) %>
+  <%= image_tag(@klass.user.picture) %>
 
 </div>
 </div>

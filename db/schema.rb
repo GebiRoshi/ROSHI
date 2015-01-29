@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20150128131232) do
 
   create_table "klasses", force: :cascade do |t|
-    t.integer  "teacher_id"
+    t.integer  "user_id"
     t.string   "title"
     t.text     "description"
     t.datetime "date"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150128131232) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "klasses", ["teacher_id"], name: "index_klasses_on_teacher_id"
+  add_index "klasses", ["user_id"], name: "index_klasses_on_user_id"
 
   create_table "teachers", force: :cascade do |t|
     t.string   "name"
@@ -44,6 +44,11 @@ ActiveRecord::Schema.define(version: 20150128131232) do
     t.string   "email"
     t.string   "crypted_password"
     t.string   "salt"
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "picture"
+    t.integer  "mobile"
+    t.datetime "birthdate"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_me_token"
