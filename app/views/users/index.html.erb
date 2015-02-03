@@ -7,36 +7,34 @@
 </div>
 
 <div class="col-md-6 middle">
-
-  <div id="class_post">
     <h1>Your Classes</h1>
-    <% if @my_klasses.length === 0 %>
-    <p>You haven't listed any classes yet.</p>
-    <% else %>
-    <% @my_klasses.each do |klass| %>
-      <li>
-          <div class="dealbox">
-              <div id="dealheader">
-                  <%= klass.title %>
-              </div>
-                 <div class="dealpad">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <%= klass.place %><br>
-                      <%= klass.date %>
-                    </div>  
-                     <div class="col-md-6">
-
-                     <%= button_to "From: #{klass.price}₪", klass, :method => "get", class: 'button' %>
-              Session
-                  </div>
-                </div>
-              </div>
-          </div>
-      </li>
-    <% end %>
-    <% end %>
+      <% if @my_klasses.length === 0 %>
+      <p>You haven't listed any classes yet.</p>
+      <% else %>
+<ul>
+<% @my_klasses.each do |klass| %>
+<li class="ClassListing">
+<div class="row listing">
+  <div class="col-md-3 ClassThumbnail">
+    Class Picture
+  </div>
+  <div class="col-md-6 ClassThumbnail">
+Link to The Class Preview of     <%= klass.title %>
+  </div>
+    <div class="col-md-3 ClassThumbnail">
+    Class Action
+  </div>
 </div>
+</li>
+<% end %>
+</ul>
+<%end%>
+
+
+
+
+
+
 </div>
 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 rightside" id="rightside">
 

@@ -16,13 +16,21 @@ class UsersController < ApplicationController
 		@my_klasses = Klass.where(user_id:current_user.id)
 	end
 
+	def show
+		@user = User.find(params[:id])
+	end
+
+	def edit
+	end
+
 	def update
+	@user = User.find(params[:id])
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'Account was successfully updated.' }
-        format.json { render :index, status: :ok, location: @user }
+        format.json { render :show, status: :ok, location: @user }
       else
-        format.html { render :edit }
+        format.html { render :show }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -31,6 +39,6 @@ class UsersController < ApplicationController
 	private
 
 	  def user_params
-      params.require(:user).permit( :email, :password, :password_confirmation, :name, :last_name, :picture, :mobile, :birthdate)
+      params.require(:user).permit( :email, :password, :password_confirmation, :name, :last_name, :about_me, :picture, :mobile, :birthdate)
       end
 end

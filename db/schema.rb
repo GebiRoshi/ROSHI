@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150128131232) do
     t.string   "salt"
     t.string   "name"
     t.string   "last_name"
+    t.text     "about_me"
     t.string   "picture"
     t.integer  "mobile"
     t.datetime "birthdate"

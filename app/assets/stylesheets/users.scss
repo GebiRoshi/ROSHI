@@ -1,3 +1,26 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ClassListing {
+	height:120px;
+	background:lightgrey;
+	border: 1px solid black; 
+	text-align: center;
+
+//.ClassThumbnail{   display: -webkit-flex; /* Safari */
+//    -webkit-flex-flow: row wrap; /* Safari 6.1+ */
+//    -webkit-align-content: space-around; /* Safari 7.0+ */
+//    display: flex;
+//    flex-flow: row wrap;
+//    align-content: space-around;
+
+}//}
+
+.forgot {
+	display: none;
+}
+.forgotpw {
+	text-decoration: underline;
+	color: blue;
+}

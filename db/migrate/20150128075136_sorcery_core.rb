@@ -6,6 +6,7 @@ class SorceryCore < ActiveRecord::Migration
       t.string :salt,			  :default => nil
       t.string :name
       t.string :last_name
+      t.text   :about_me
       t.string :picture
       t.integer :mobile 
       t.datetime :birthdate
