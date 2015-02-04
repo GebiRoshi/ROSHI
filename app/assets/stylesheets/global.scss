@@ -1,3 +1,5 @@
+$text-green: #008160;
+
 *{
 	border: 0px solid black;
 }
@@ -6,9 +8,16 @@ ul, li {
     list-style:none;
     margin:0px;
     padding:0px;
+    color: $text-green;
 
 
 }
 html, body {
 	height: 100%;
+}
+
+p {
+	text-align: justify;
+	text-justify: inter-word;
+	color: $text-green;
 }
