@@ -15,9 +15,17 @@ $text-green: #008160;
 	min-height:500px;	
 }
 
+
+.contact-form{
+	padding-right:50px;
+	min-height:350px;
+	border-right:4px solid $text-green;
+	}
+
 .aboutborder {
 	border-right:4px solid $text-green;
-}
+	}
+
 
 .aboutimage {
 	display:block;
@@ -32,3 +40,8 @@ $text-green: #008160;
 	color:$text-green;
 	text-align: left;
 }
+
+.contact-text{
+	margin-top:90px;
+}
+

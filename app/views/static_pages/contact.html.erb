@@ -1,2 +1,48 @@
-<h1>StaticPages#contact</h1>
-<p>Find me in app/views/static_pages/contact.html.erb</p>
+<div class="col-md-2"></div>
+
+<div class="col-md-8">
+
+<div class="row">
+<div class="col-md-6">
+
+<h1>Ask us!</h1>
+<div class="contact-form">
+        <%= form_tag(send_mail_path) do %>
+            <div class="form-group">
+                <%= label_tag 'name', 'Name' %>
+                <%= text_field_tag 'name', nil, class: 'form-control', placeholder: 'Your Name' %>
+            </div>
+           <div class="form-group">
+               <%= label_tag 'email', 'Email' %>
+               <%= email_field_tag 'email', nil, class: 'form-control', placeholder: 'Your Email Address' %>
+           </div>
+           <div class="form-group">
+               <%= label_tag 'comments', 'Comments' %>
+               <%= text_area_tag 'comments', nil, class: 'form-control', rows: 4, placeholder: 'Comments...' %>
+           </div>
+
+           <%= submit_tag nil, class: 'btn btn-default btn-about pull-right' %>
+       <% end %>
+<p id="notice"><%= notice %></p>
+</div>
+
+</div>
+<div class="col-md-6">
+
+<div class="row">
+<div class="col-md-6"></div>
+<div class="col-md-6"><h3 class="contact-text">WE MIGHT BE ABLE TO ANSWER YOUR QUESTIONS RIGHT NOW, CHECK OUT
+OUR 
+FAQ's</h3></div>
+
+</div>	
+
+
+
+</div>
+</div>
+
+
+</div>
+
+<div class="col-md-2"></div>
