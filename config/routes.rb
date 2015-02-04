@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'static_pages/about'
+
+  get 'static_pages/faq'
+
+  get 'static_pages/cancellation'
+
+  get 'static_pages/contact'
+
+  get 'static_pages/tou'
+
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
