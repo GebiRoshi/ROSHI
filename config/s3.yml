@@ -1,0 +1,10 @@
+development: &development
+  bucket: roshi.app
+  access_key_id: 'AKIAIDSNW5OH75BCL34A'
+  secret_access_key: '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'
+
+test:
+  <<: *development
+
+production:
+  <<: *development
