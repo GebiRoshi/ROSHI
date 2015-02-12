@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
-  has_many :klasses
+  has_many :klasses, dependent: :destroy
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create

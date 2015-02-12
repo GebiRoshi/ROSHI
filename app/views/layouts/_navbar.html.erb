@@ -23,7 +23,8 @@
 		<li>
 			<%= dropdown current_user.name do %>
 			  <%= link_to 'Dashboard', root_path %>
-			  <%= link_to 'My Classes', my_classes_path %>
+			  <%= link_to 'Your listings', my_classes_path %>
+			  <%= link_to 'Your Classes', users_bookings_path %>
 			  <%= link_to 'Account', edit_account_path %>
 			  <%= link_to 'Log Out', logout_path %>
 			<% end %>

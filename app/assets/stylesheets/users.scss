@@ -4,8 +4,8 @@
 
 .ClassListing {
 	height:120px;
-	background:lightgrey;
-	border: 1px solid black; 
+	
+	border: 2px solid black; 
 	text-align: center;
 
 //.ClassThumbnail{   display: -webkit-flex; /* Safari */
@@ -23,4 +23,15 @@
 .forgotpw {
 	text-decoration: underline;
 	color: blue;
+}
+
+.listed_icon {
+	padding-top: 47.5px;
+}
+.action_button {
+	padding-top:20.5px;
+}
+.title {
+	padding-top:35px;
+	color:red;
 }

@@ -25,16 +25,20 @@ class UsersController < ApplicationController
 
 	def update
 	@user = User.find(params[:id])
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'Account was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :show }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+	    respond_to do |format|
+	      if @user.update(user_params)
+	        format.html { redirect_to @user, notice: 'Account was successfully updated.' }
+	        format.json { render :show, status: :ok, location: @user }
+	      else
+	        format.html { render :show }
+	        format.json { render json: @user.errors, status: :unprocessable_entity }
+	      	end
+    	end
+  	end
+
+  	def bookings
+  		
+  	end
 
 	private
 

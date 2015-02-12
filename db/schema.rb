@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150128131232) do
     t.datetime "time"
     t.string   "place"
     t.integer  "price"
+    t.boolean  "listed"
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"

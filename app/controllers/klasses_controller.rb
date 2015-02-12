@@ -1,5 +1,6 @@
 class KlassesController < ApplicationController
   before_action :set_klass, only: [:show, :edit, :update, :destroy]
+  before_action :list_klass, only: [:is_listed]
   before_filter :require_login, :only => :create
   # GET /klasses
   # GET /klasses.json
@@ -24,7 +25,6 @@ class KlassesController < ApplicationController
   # GET /klasses/1
   # GET /klasses/1.json
   def show
-
   end
 
   # GET /klasses/new
@@ -57,13 +57,24 @@ class KlassesController < ApplicationController
   def update
     respond_to do |format|
       if @klass.update(klass_params)
-        format.html { redirect_to @klass, notice: 'Klass was successfully updated.' }
+        format.html { redirect_to my_classes_path, notice: 'Klass was successfully updated.' }
         format.json { render :show, status: :ok, location: @klass }
       else
         format.html { render :edit }
         format.json { render json: @klass.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def is_listed
+
+      if @klass.listed === true
+        @klass.listed = "false"
+      else
+        @klass.listed = "true"
+      end
+        @klass.save
+        redirect_to users_url
   end
 
   # DELETE /klasses/1
@@ -82,8 +93,12 @@ class KlassesController < ApplicationController
       @klass = Klass.find(params[:id])
     end
 
+    def list_klass
+      @klass = Klass.find(params[:format])      
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def klass_params
-      params.require(:klass).permit(:title, :user_id, :description, :date, :time, :place, :price, :address, :latitude, :longitude)
+      params.require(:klass).permit(:title, :id, :user_id, :description, :date, :time, :place, :price, :listed, :address, :latitude, :longitude)
     end
 end

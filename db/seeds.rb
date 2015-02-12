@@ -17,6 +17,7 @@ Klass.create!([{
     	time: "20:00",
     	place:  "basel 42, Tel Aviv",
     	price:  "500",
+      listed: "true",
         latitude: "32.090127",
         longitude: "34.780136",
 
@@ -30,6 +31,7 @@ Klass.create!([{
     	time: "10:00",
     	place:  "Beit kalka, Tel Aviv",
     	price:  "100",
+      listed: "true",
         latitude: "32.077178",
         longitude: "34.776605",
 
@@ -42,6 +44,7 @@ Klass.create!([{
     	time: "06:00",
     	place:  "chovevei tsyion 9, Tel Aviv",
     	price:  "500",
+      listed: "true",
         latitude: "32.071753",
         longitude: "34.789886",
 

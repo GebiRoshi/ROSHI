@@ -9,7 +9,7 @@
 
   <div id="class_post">
     <h1>Listing Classes</h1>
-    <% @klasses.each do |klass| %>
+    <% @klasses.where(:listed => true).each do |klass| %>
       <li>
           <div class="dealbox">
               <div id="dealheader">

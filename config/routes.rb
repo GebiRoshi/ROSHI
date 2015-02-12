@@ -14,12 +14,19 @@ Rails.application.routes.draw do
 
   get 'static_pages/tou'
 
+  get "users/bookings"
+
+  post "klasses/is_listed" => "klasses#is_listed"
+
+
+
 match '/send_mail', to: 'static_pages#send_mail', via: 'post'
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
   get "my_classes" => "users#index", :as => "my_classes"
+
   get "edit_account" => "users#edit", :as => "edit_account"
   resources :users
   resources :sessions
