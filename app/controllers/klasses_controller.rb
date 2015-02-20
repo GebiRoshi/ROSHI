@@ -5,7 +5,11 @@ class KlassesController < ApplicationController
   # GET /klasses
   # GET /klasses.json
   def index
-    @klasses = Klass.all
+    if params[:search].present?
+      @klasses = Klass.near(params[:search], 5)
+    else
+      @klasses = Klass.all
+    end
 
 
     @hash = Gmaps4rails.build_markers(@klasses) do |klass, marker|
