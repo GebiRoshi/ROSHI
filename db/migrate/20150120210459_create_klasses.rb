@@ -8,6 +8,7 @@ class CreateKlasses < ActiveRecord::Migration
       t.datetime :time
       t.string :place
       t.integer :price
+      t.string :picture
       t.boolean :listed
       t.string :address
       t.float :latitude

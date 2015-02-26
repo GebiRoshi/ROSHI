@@ -3,8 +3,8 @@
 <div class="col-md-3"></div>
 
 <div class="col-md-6" >
-    <h1>Your Listings</h1>
-      <% if @my_klasses.length === 0 %>
+    <h1>Your Bookings</h1>
+      <% if @my_bookings.length === 0 %>
       <p>You haven't listed any classes yet.</p>
       <% else %>
 <ul>
@@ -12,43 +12,43 @@
 
 
 
-<% @my_klasses.each do |klass| %>
+<% @my_bookings.each do |booking| %>
 
 </br>
 <li class="ClassListing">
 <div class="row listing">
   <div class="col-md-3 ClassThumbnail">
-    Class Picture <%= klass.id %> with number
+    <%= image_tag booking.klass.picture, class:'thumbnail' %>
   </div>
   <div class="col-md-6 title">
    <ul>
-<li><%= link_to klass.title, klass %></li>
+<li><%= link_to booking.klass.title, klass_path(booking), class:'classtitle' %></li> <!-- Change route here!!!! -->
    </ul>
   </div>
     <div class="col-md-2 action_button">
     <%= dropdown 'Action' do %>
 
-<% if klass.listed === true && klass.date > Date.today  %>
-  <%= link_to 'Unlist' , klasses_is_listed_path(klass), { action: "is_listed?", controller: "klasses"},
-                                method: :is_listed, data: { confirm: "The Class will be unlisted now"}  %>
-<% elsif klass.date < Date.today %>
+<% if booking.klass.listed === true && booking.klass.date > Date.today  %>
+  <%= link_to 'Unlist' , root_url, { action: "is_listed?", controller: "klasses"},
+                                method: :is_listed, data: { confirm: "The Class will be unlisted now"}  %><!-- Change route here!!!!  was klasses_is_listed_path(booking.klass) -->
+<% elsif booking.klass.date < Date.today %>
    <%= link_to 'List', @my_klasses_path, data: { confirm: "You can't list an expired class"} %>
 
 <% else %>
-   <%= link_to 'List', klasses_is_listed_path(klass), { action: "is_listed?", controller: "klasses"},
-                                method: :is_listed, data: { confirm: "The Class will be listed again"} %>
+   <%= link_to 'List', root_url, { action: "is_listed?", controller: "klasses"},  
+                                method: :is_listed, data: { confirm: "The Class will be listed again"} %>    <!-- Change route here!!!!  was klasses_is_listed_path(booking.klass) -->
 <% end %>
-  <%= link_to 'Edit', edit_klass_path(klass) %>
-  <%= link_to 'Delete', klass, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit', edit_klass_path(booking) %> <!-- Change route here!!!!  was klasses_is_listed_path(booking.klass) -->
+  <%= link_to 'Delete', booking.klass(booking), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
-<% if klass.date < Date.today %>
-Expired on <%= klass.date.strftime('%d.%m.%Y') %>
+<% if booking.klass.date < Date.today %>
+Expired on <%= booking.klass.date.strftime('%d.%m.%Y') %>
 <% else %>
-Starts in <%= ( plday = klass.date.to_date - Date.today.to_date).to_i %> <%= "Day".pluralize(plday) %> at <%= klass.time.strftime("%H:%M") %>
+Starts in <%= ( plday = booking.klass.date.to_date - Date.today.to_date).to_i %> <%= "Day".pluralize(plday) %> at <%= booking.klass.time.strftime("%H:%M") %>
 <% end %>
   </div>
   <div class="col-md-1">
-<% if klass.listed === true && klass.date > Date.today %>
+<% if booking.klass.listed === true && booking.klass.date > Date.today %>
 <%= image_tag("https://s3-eu-west-1.amazonaws.com/roshi.app/Global_Pictures/listed_green.png", class: "listed_icon") %>
 <% else %>
 <%= image_tag("https://s3-eu-west-1.amazonaws.com/roshi.app/Global_Pictures/listed_red.png", class: "listed_icon") %>

@@ -59,6 +59,29 @@
   <%= @klass.longitude %>
 </p>
 
+
+<%= form_for Booking.new, layout: :basic do |f| %>
+  <% if @klass.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@klass.errors.count, "error") %> prohibited this klass from being saved:</h2>
+
+      <ul>
+      <% @klass.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :klass_id, :value => @klass.id %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
 <%= link_to 'Edit', edit_klass_path(@klass) %> |
 <%= link_to 'Back', klasses_path %>
 </div>

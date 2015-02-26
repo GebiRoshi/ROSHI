@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217101405) do
+ActiveRecord::Schema.define(version: 20150223162259) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
@@ -19,9 +19,6 @@ ActiveRecord::Schema.define(version: 20150217101405) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "bookings", ["klass_id"], name: "index_bookings_on_klass_id"
-  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id"
 
   create_table "klasses", force: :cascade do |t|
     t.integer  "user_id"
@@ -31,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150217101405) do
     t.datetime "time"
     t.string   "place"
     t.integer  "price"
+    t.string   "picture"
     t.boolean  "listed"
     t.string   "address"
     t.float    "latitude"
@@ -40,24 +38,6 @@ ActiveRecord::Schema.define(version: 20150217101405) do
   end
 
   add_index "klasses", ["user_id"], name: "index_klasses_on_user_id"
-
-  create_table "locations", force: :cascade do |t|
-    t.string   "adress"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "teachers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "last_name"
-    t.string   "picture"
-    t.integer  "mobile"
-    t.datetime "birthdate"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email"

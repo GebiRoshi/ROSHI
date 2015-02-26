@@ -11,7 +11,7 @@
 
     <% @klasses.where(:listed => true).each do |klass| %>
       <li>
-          <div class="dealbox">
+          <div class="dealbox" style="background-image: url(<%= klass.picture %>)">
               <div id="dealheader">
                   <%= klass.title %>
               </div>
@@ -33,8 +33,5 @@
     <% end %>
 
   </div>
-
-
-
 </div>
 

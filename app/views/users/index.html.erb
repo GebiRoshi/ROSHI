@@ -18,11 +18,11 @@
 <li class="ClassListing">
 <div class="row listing">
   <div class="col-md-3 ClassThumbnail">
-    Class Picture <%= klass.id %> with number
+    <%= image_tag klass.picture, class:'thumbnail' %>
   </div>
   <div class="col-md-6 title">
    <ul>
-<li><%= link_to klass.title, klass %></li>
+<li><%= link_to klass.title, klass, class:'classtitle' %></li>
    </ul>
   </div>
     <div class="col-md-2 action_button">

@@ -37,7 +37,8 @@ class UsersController < ApplicationController
   	end
 
   	def bookings
-  		
+  		@klass = Klass.all
+  		@my_bookings = Booking.where(user_id:current_user)
   	end
 
 	private

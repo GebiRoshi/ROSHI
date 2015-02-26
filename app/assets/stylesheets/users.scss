@@ -8,6 +8,18 @@
 	border: 2px solid black; 
 	text-align: center;
 
+
+	.thumbnail{
+		height: 115px;
+		width: 120px;
+	padding:0px;
+		}
+	}
+.classtitle{
+	text-decoration: none;
+	color: black;
+	font-size:30px;
+}
 //.ClassThumbnail{   display: -webkit-flex; /* Safari */
 //    -webkit-flex-flow: row wrap; /* Safari 6.1+ */
 //    -webkit-align-content: space-around; /* Safari 7.0+ */
@@ -15,8 +27,7 @@
 //    flex-flow: row wrap;
 //    align-content: space-around;
 
-}//}
-
+//}
 .forgot {
 	display: none;
 }

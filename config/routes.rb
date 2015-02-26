@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   post "klasses/is_listed" => "klasses#is_listed"
 
 
-
 match '/send_mail', to: 'static_pages#send_mail', via: 'post'
 
   get "logout" => "sessions#destroy", :as => "logout"
@@ -30,7 +29,7 @@ match '/send_mail', to: 'static_pages#send_mail', via: 'post'
   get "edit_account" => "users#edit", :as => "edit_account"
   resources :users
   resources :sessions
-
+  resources :bookings, only: [:create]
 
   resources :klasses
   root to: 'klasses#index'
